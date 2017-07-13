@@ -1,0 +1,7 @@
+.tabHead{width:94%;height:45px;margin:30px auto;overflow:hidden;}
+.tab{padding:10px 55px;background-color:#F9F9F9;font-size:16px;text-align:center;border:1px black solid;float: left;border-bottom:1px black solid;box-sizing:border-box;cursor:pointer;}
+.tabConter{width:90%;background-color: white;position:absolute;top:40px;margin-top:3px;left:38px}
+.more{width:100%;font-size:16px;text-align:right;width: 240px;display: inline-block;line-height: 42px;border-bottom: 1px black solid;cursor:pointer;text-indent:-10em;}
+.active{background-color:white;color:red;border-top:2px red solid;border-bottom:white 1px solid;}
+.list{width:20%;float:left;cursor:pointer;}
+.ul{overflow:hidden;width:100%;}

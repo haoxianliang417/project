@@ -1,0 +1,17 @@
+body,p{margin:0;padding:0;}
+body{background-color:#f2f2f2;}
+.logoHead{width: 900px;padding: 0;margin: 0 auto;zoom: 1;}
+.logo{padding: 10px 0;float: none;margin: 0;position: relative;}
+.logo b{position: absolute;height: 46px;top: 18px;margin-left: 20px;font-size:30px;}
+.registForm{background: #FFF;margin-bottom: 10px;width: 990px;padding: 0; margin: 0 auto; zoom: 1;}
+.toLogBg{padding-right: 10px;position: relative; overflow: visible; margin-bottom: -1px; border-bottom: 1px solid #dddddd;height: 32px;line-height: 32px;background: #f2f2f2;}
+.tolog{position: absolute;right: 20px;top: 5px;}
+.tolog span{font-size:9px}
+.tolog span a{font-size:9px;color:#005AA0;}
+.form{margin-left: 120px;padding: 30px 0 50px 0}
+.inpAcBg{margin: 0;padding: 0;outline: 0 none;font-weight: normal;font-style: normal;font-size: 100%;font-family: inherit;position:relative;display:inline-block;margin-top:20px;margin-left:10px;}
+.inpAcBg input{width: 238px;height: 16px;float: none;font-size: 14px;font-family: arial, 宋体;color: rgb(153, 153, 153);padding: 10px 25px 10px 5px;border-width: 1px;border-style: solid;border-color: rgb(204, 204, 204);border-image: initial;}
+.phoneAc  span i{color: red}
+.btnReg{width: 270px;height: 36px;color:white;font-size: 16px;font-weight: 800;border-width: 0px;border-style: none;border-color: initial;border-image: initial;margin:20px 0 0 118px;background-color:red;}
+.phone{margin-left:15px}
+footer{width: 900px;padding: 0;margin: 0 auto;zoom: 1;text-align:center;padding:40px 0 40px 0;font-size:9px}
