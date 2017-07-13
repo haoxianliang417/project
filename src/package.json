@@ -1,0 +1,28 @@
+{
+  "name": "zhongjiu",
+  "version": "0.0.1",
+  "description": "中酒项目",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.5.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "node-sass": "^4.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "zhongjiu"
+  },
+  "repository": {
+    "type": "git",
+    "url": "zhongjiu"
+  },
+  "keywords": [
+    "zhongjiu"
+  ],
+  "author": "haoxian",
+  "license": "ISC"
+}

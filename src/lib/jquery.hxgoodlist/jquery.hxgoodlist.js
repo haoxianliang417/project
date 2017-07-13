@@ -17,7 +17,7 @@
 					<a class="tab">${item}</a>
 				`
 			}).join("");
-			html +='<a class="more">更多>></a>';
+			html +='<a href="./html/list.html" class="more">更多>></a>';
 			//console.log(html);
 			$div.append(html);
 			$div.appendTo($self);

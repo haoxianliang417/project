@@ -38,14 +38,14 @@
 	}
 
 	// 查询数据库
-	$result = $conn->query($sql);
+	$result = $conn->query($sql)or die("查询失败");
 
 	//使用查询结果	
 	$row = $result->fetch_all(MYSQLI_ASSOC);
 	$val = $row[0]["password"];
 	//$json = json_encode($row,JSON_UNESCAPED_UNICODE); 
 	//$selPw = json_decode($json, true)
-
+	//print_r($result) ;
 	if($password==$val){
 		echo true;
 		//echo 111;

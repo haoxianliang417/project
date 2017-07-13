@@ -1,0 +1,168 @@
+body,p,ul,li,h3{margin:0;padding:0;}
+ul{list-style:none;}
+a{text-decoration:none;}
+
+.logAndReg{overflow:hidden;display: inline-block;margin-left:44px;width:200px;float:left;
+	li{float:left;
+		a{color:#7f7f7a;}
+	}
+	li:nth-of-type(1)::after{content:"|";color:#e6e6e6;padding:0 16px;}
+
+}
+
+ 
+.divHeadBg{width:100%;background-color:#F5F4F4;line-height:31px;font-size:12px;
+	.header {
+		.info{overflow:hidden;display: inline-block;margin-left:44px;width:200px;float:left;
+			li{float:left;
+				a{color:#7f7f7a;}
+			}
+		}
+	}
+	
+}
+
+.header{margin:0 auto;width:1280px;background-color:#F5F4F4;line-height:30px;height:30px}
+.wel{display:inline-block;float: left;color:#7F7F7A;
+	.tip{margin:0 12px 0;color:black;
+		a{color:red;}
+	}
+}
+
+
+.headNav{float:right;
+	li{height: 31px;line-height: 31px;padding: 0 8px 0 8px;float: left;position: relative;
+		a {color:#7f7f7a;}
+	}
+}
+
+.myZhong9{position:absolute;z-index:3;display:none;background-color:white;padding:2px 15px;margin-left:-10px;margin-top:-3px;
+	ul{
+		li{margin:0;padding:0;clear:both;width:80px;height:30px;line-height:30px;}
+	}
+}
+
+.active{background-color: white;}
+.wechat {
+	img{width:90px;}
+	}
+.mob {
+	img{width:90px;}
+	}
+.code{position:absolute;display:none;z-index:10;}
+.mob{position:absolute;display:none;z-index:10;
+	p{margin:0;padding:0;text-align:center;height:20px;margin-top:-10px}
+	p:nth-of-type(2){color:red;margin-top:10px}
+} 
+.saleCen{z-index:10;display:none;position:absolute;background-color:white;padding:2px 15px;margin-left:-10px;margin-top:-3px;
+	ul{
+		li{margin:0;padding:0;clear:both;width:80px;height:30px;line-height:30px;}
+	}
+}
+
+.netNav{position:absolute;width:200px;display:none;padding:2px 15px;margin-left:-10px;margin-top:-3px;z-index:10;background-color:white;
+	ul{overflow:hidden;
+		li{margin-top:10px;height:100%;width:100%;
+			ul{width:200px;margin-left:-5px;
+				li{height:17px;line-height:17px;width:50px;float:left;}
+			}
+		}
+	}
+}
+
+.search{height: 90px;padding-top: 30px;width: 1190px;margin: 0 auto;position: relative;}
+.logo{float: left;width: 200px;max-height: 60px;height: 30px;}
+.gif{float: left;position: relative;left: 10px;}
+.newRg{width: 160px;height: 80px;position: absolute;right: 0;top: 20px;}
+.search-bar{float: right;position: relative;right: 250px;width: 590px;height: 38px;}
+
+.sear-form{margin-bottom: 4px;position: relative;border: 2px solid #dd0207;
+	ul{position: absolute;left: 0;background-color: #fff;width: 55px;line-height: 32px;font-size: 12px;box-shadow: 0 2px 4px #ddd;border: 1px solid #ddd;z-index: 2;display: none;text-align:center;}
+	label{position: absolute;left: 0;width: 55px;text-indent: 12px;font-size: 12px;line-height: 34px;cursor: pointer;color: #484e52;border-left: 1px solid #fcd5db;}
+	label::after{content: '';position: absolute;top: 15px;right: 0;border-top: 5px solid #cecece;border-left: 4px dashed transparent;border-right: 4px dashed transparent;font-size: 0;width: 0;height: 0;}
+}
+.searchBox{width: 450px;height: 34px;padding-left: 12px;position: relative;left: 56px;background-color: #fff;line-height: 34px;color: rgb(51, 51, 51);font-size: 12px;border-right: 0;border: 0 none;outline:none;}
+.btnSearch{background: #dd0207;width: 67px;font-size: 15px;color: #fff;cursor: pointer;line-height: 34px;letter-spacing: 2px;border-left: 1px solid #f45670;float: right;border: 0 none;}
+.hot-search{height: 20px;color: #999;overflow: hidden;margin-top: 5px;
+	a{margin-right: 10px;font-size: 12px;cursor: pointer;}
+	a:nth-of-type(1){color:red;}
+}
+
+
+.right-side{position: fixed;right: 0;top: 0;height: 100%;z-index: 999;}
+.right-side2{right:-220px;}
+.right-side-menu{height: 100%;width: 40px;background-color: #2a2a2e;position: relative;float: left;}
+.menu-top{top: 15%;position: relative;}
+.user s{background: url(../img/Himall_web.png) no-repeat;border: none;margin: auto;position: relative;display: block;width: 19px;height: 19px;background-position: -1403px -26px;top: 10px;}
+span{display: none;position: absolute;right: 60px;opacity: 0;top: 0;width: 90px;height: 40px;line-height: 40px;text-align: center;color: #fff;background-color: #494949;-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .2);-moz-box-shadow: 0 0 5px rgba(0, 0, 0, .2);box-shadow: 0 0 5px rgba(0, 0, 0, .2);position: absolute;font-size:12px;}
+span:after{position: absolute;content: '';border-bottom: 10px dashed transparent;border-top: 10px dashed transparent;border-left: 10px solid #494949;right: -5px;top: 10px; }
+.menu-top {
+	.userli {width: 40px;height: 40px;margin: 10px 0;cursor: pointer;position: relative;}
+}
+
+
+s{width: 20px;border-bottom: 1px solid #505053;display: block;margin-left: 10px;margin-top:10px;}
+.menuActive{background-color:red;}  
+.car{background: url(../img/Himall_web.png) no-repeat;border: none;margin: auto;position: relative;    display: block;width: 16px;height: 14px;background-position: -1429px -0px;top: 22px;}
+.carli {
+	p{color: #fff;padding: 0 14px;margin: 2px 0;margin-top:30px;font-size:12px;}
+}
+
+em{display: inline-block;padding: 0 3px;min-width: 14px;height: 20px;line-height: 20px;border-radius: 10px;background-color: #e3393c;color: #fff;margin-left:10px;font-style: normal;text-align:center;}
+.assetli{width: 40px;height: 40px;margin: 10px 0;cursor: pointer;position: relative;}
+.asset {
+	s{background: url(../img/Himall_web.png) no-repeat;border: none;margin: auto;position: relative;display: block;width: 16px;height: 18px;background-position: -1429px -26px;top: 10px;}
+}
+.favGoodli{width: 40px;height: 40px;margin: 10px 0;cursor: pointer;position: relative;}
+.favGood {
+	s{background: url(../img/Himall_web.png) no-repeat;border: none;margin: auto;position: relative;display: block;width: 17px;height: 16px;background-position: -1455px 0;top: 12px;}
+}
+.go-topli{width: 40px;height: 40px;margin: 10px 0;cursor: pointer;position: relative;}
+.go-top {
+	s{background: url(../img/Himall_web.png) no-repeat;border: none;margin: auto;position: relative;display: block;width: 20px;height: 40px;background-position: -1455px -26px;top: 12px;}
+}
+.nav-bar{background: #fff;border-bottom: 1px solid #d2041f;position: relative;z-index: 88;}
+.content{position: relative;z-index: 6;padding-left: 200px;width: 990px;margin: 0 auto;}
+.nav{filter: none;height: 35px;overflow: hidden;
+	li{float:left;margin-left:56px;line-height:35px;}
+}
+
+.categorys{position: absolute;top: 0;left: 0;width: 200px;height: 37px;background-color: #dd0207;
+	div{
+		a{color: #fff;margin-left: 14px;padding-left: 31px;line-height: 35px;background-image: url(../img/HIMALL_admin11_04_03.png);background-repeat: no-repeat;background-position: left center;}	
+	}
+}
+
+.goodlist{position:relative;} 
+.side-content{background: #393939;height: 100%;display:none;width: 220px;float: left;}   
+.side-car{osition: relative;height: 100%;background-color: #e6e6e6;}
+.side-bd{position: relative;}
+.car-top{height: 28px;line-height: 28px;background-color: #e6e6e6;}
+.side-bd {
+	.car-top {
+		label{margin-left: 13px;font-size:12px;
+			input{vertical-align: middle;margin-right: 3px;}
+		}
+		a{float: right;margin-right: 18px;font-size:12px;margin-top:3px;}
+	}
+}
+ 
+.car-list{overflow: hidden;outline: none;width:100%;}
+.car-btn{bottom: 20px;left: 0;padding: 0 15px;width: 190px;background-color: #e6e6e6;}
+.car-total{color: #333;line-height: 30px;height:30px;}
+.side-car {
+	.car-total {
+		.total-money{float: right;color: #e3393c;}
+	}
+}
+
+.btn-submit{width: 100%;height: 40px;line-height: 40px;text-align: center;color: #fff;background-color: #e3393c;border: 0 none;cursor: pointer;outline:none;}
+.total-sel{display:inline-block;font-size:12px;
+	i{margin:0;padding:0;font-style:normal;}
+}
+
+.total-price{display:inline-block;font-size:12px;float:right;color:#e3393c;
+	i{margin:0;padding:0;font-style:normal;}
+}
+
+
