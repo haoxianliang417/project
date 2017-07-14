@@ -48,7 +48,7 @@ require(['config'],function(){
 			},
 
 			select:function(){
-				console.log(777);
+				//console.log(777);
 				$.ajax({
 					url:'../api/log_user.php',
 					data:{
@@ -65,8 +65,14 @@ require(['config'],function(){
 								now.setDate(now.getDate()+7);
 								document.cookie = 'info=' +'{"account":'+$(this.ac).val()+',"password":'+$(this.pw).val()+'};expires=' + now.toUTCString()+";path=/";
 								//console.log(document.cookie);
-							};
-							//location.href="../index.html";
+								location.href="../index.html";
+							}else{
+								var now = new Date();
+								now.setDate(now.getDate()+1);
+								document.cookie = 'info=' +'{"account":'+$(this.ac).val()+',"password":'+$(this.pw).val()+'};expires=' + now.toUTCString()+";path=/";
+								location.href="../index.html";
+							}
+							
 						}else if(res==""){
 							$("#errTip").html("账号或密码错误");
 						}

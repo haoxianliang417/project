@@ -48,15 +48,11 @@
 	//print_r($result) ;
 	if($password==$val){
 		echo true;
-		//echo 111;
+		
 	}else{
 		echo false;
-		//echo 222;
+		
 	}
-	//echo json_encode($row);
-	//echo $password." ".$val;
-	//echo $val;
-	//print_r($selPw);
 	} 
 
 	//关闭连接

@@ -43,6 +43,13 @@ require(['config'],function(){
 					},
 					success:(res)=>{
 						console.log(res);
+							if(res){
+								var now = new Date();
+								now.setDate(now.getDate()+1);
+								document.cookie = 'info=' +'{"account":'+$(this.ac).val()+',"password":'+$(this.pw).val()+'};expires=' + now.toUTCString()+";path=/";
+								location.href="../index.html"
+							}
+							
 						}
 					});
 				}

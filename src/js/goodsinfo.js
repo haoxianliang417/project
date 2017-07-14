@@ -4,6 +4,7 @@ require(['config'],function(){
 		var carNum = 0;
 		var thisCount = 1;
 		var obj={};
+		var qtr=0;
 		$('<div/>').addClass('headers').load('header.html',function(){
 				$(this).insertBefore('.goodsinfo');
 				var times = 0;
@@ -222,10 +223,13 @@ require(['config'],function(){
 					var left = e.pageX-50/2;
 					$("#goodsimg").clone(false,false).appendTo($('body')).addClass("mini").css({'top':top,'left':left}).animate({top:150+$(document).scrollTop(),left:$(document).width()},1000,function(){
 						$('.mini').remove();
+						if($(".gli")[0]!=undefined){
+							console.log(111);
+							$(".gli").remove();
+						}
 						addGoods();
-						carNum += Number($("#number").val());
-						$('.carli em').html(carNum);
 						//console.log($('.carli em'));
+						//console.log($(".gli"))
 						
 					});
 				}.bind(this));
@@ -261,12 +265,54 @@ require(['config'],function(){
 		}
 
 		function addGoods(){
+			
 			console.log(0);
 			$ul = $("<ul/>");
-			console.log($("#number"));
-			$ul.append(`<li class="gli"><input type = "checkbox" class="goodscheck"/><img class="mini2" src="../img/${obj[0].bigImg}"/><i class="carnumber">${$("#number").val()}</i><i class="carprice">${obj[0].price}</i></li>`)
+			//console.log($("#number"));
+			
+			var now = new Date();
+			now.setDate(now.getDate()+1);
+			//console.log($('#userAc')[0].innerText);
+			var cookieArr = document.cookie.split('; ');
+			cookieArr.map(function(item){
+				if(item.split('=')[0]=="shopcar"){
+					qtr = item.split('=')[1].split(':');
+					qtr =Number(qtr[qtr.length-1].slice(0,-1))+Number($("#number").val());
+					//carNum += Number($("#number").val());
+					$('.carli em').html(qtr);
+				}
+
+			})
+			$ul.append(`<li class="gli"><input type = "checkbox" class="goodscheck"/><img class="mini2" src="../img/${obj[0].bigImg}"/><i class="carnumber">${qtr}</i><i class="carprice">${obj[0].price}</i></li>`)
 			$ul.appendTo($(".car-list"));
+			document.cookie = 'shopcar=' +'{"account":'+$('#userAc').val()+',"goodsid":'+id+','+'"qtr":'+qtr+'};expires=' + now.toUTCString()+";path=/";
+		
+			$(".goodscheck").click(function(){
+				$(".goodscheck").attr("checked","true");
+				//console.log($(".goodscheck").attr("checked"));
+				//console.log();
+				$('.total-num').html($(':checked').length);
+				//console.log(obj.price)
+				$(':checked').length>0?$('.tal-price').html(qtr*obj[0].price+'.00'):$('.tal-price').html('0');
+			})
+
+			$(".btn-submit").click(function(){
+				$('.total-num').html("0");
+				$('.tal-price').html('0');
+				if($(".gli")[0]!=undefined){
+							console.log(111);
+							$(".gli").remove();
+						}
+			var now = new Date();
+			now.setDate(now.getDate()-1);
+			document.cookie = 'shopcar=' +'{"account":'+$('#userAc').val()+',"goodsid":'+id+','+'"qtr":'+qtr+'};expires=' + now.toUTCString()+";path=/";
+			qtr=0;
+			$('.carli em').html("0")
+			console.log("购买完成");
+			})
 		}
+
+
 
 		
 	})

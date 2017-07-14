@@ -39,7 +39,7 @@
 
 	//使用查询结果	
 	if($result){
-		echo "数据写入成功";
+		echo true;
 	}
 	//关闭连接
 	$conn->close();
