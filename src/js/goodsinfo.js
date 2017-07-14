@@ -3,6 +3,7 @@ require(['config'],function(){
 		console.log(666);
 		var carNum = 0;
 		var thisCount = 1;
+		var obj={};
 		$('<div/>').addClass('headers').load('header.html',function(){
 				$(this).insertBefore('.goodsinfo');
 				var times = 0;
@@ -140,6 +141,34 @@ require(['config'],function(){
 				//console.log($(window).height(),$(".side-top").height(),$(".car-btn").height());
 				$(".car-list").height($(window).height()-38-70);
 		})
+		//functino getInfo (){
+			var id = location.search.substring(1).split('=')[1];
+			$.ajax({
+				url:'../api/goodsinfo.php',
+				data:{
+					goodsid:id
+				},
+				dataType:"json",
+				success:function(res){
+					console.log(res)
+					obj=res;
+					//ginfo.init(res);
+					//console.log(res[0].goodstitle);
+					$(".title").html(res[0].goodstitle);
+					ginfo.goodsName.html(res[0].goodstitle);
+					ginfo.price.html(res[0].price);
+					ginfo.saleout.html(res[0].saleout);
+					ginfo.other.html(res[0].other);
+					//console.log('../img/'+res[0].bigImg);
+					ginfo.goodsimg.attr("src","../img/"+res[0].bigImg);
+					ginfo.goodsimg.attr("data-big","../img/"+res[0].bigImg);
+					//ginfo.goodsName.html(res[0].goodstitle);
+					//ginfo.goodsName.html(res[0].goodstitle);
+				}
+			})
+		//}
+		
+		//console.log(id);
 		$('.goods').gdsZoom({
 			position:'right',
 			width:350,
@@ -148,17 +177,23 @@ require(['config'],function(){
 		});
 		//商品详情页面对象
 		var ginfo = {
+			goodsimg:$("#goodsimg"),
 			goodsName:$("h1"),
+			other:$("#other"),
 			price:$(".price"),
 			count:$("#number"),
+			saleout:$("#saleout"),
+			pingjia:$("#discuss"),
+			pingfen:$("#pingfen"),
 			btnjia:$("#jia"),
 			btnjian:$("#jian"),
 			btnBuy:$("#btnBuy"),
 			btnAdd:$("#btnAdd"),
-			init:function(){
+			init:function(res){
 				//减少商品
 				this.btnjian.click(function(){
 					//console.log(this);
+					console.log(this.goodsName);
 					if(Number(this.count.val())==1){
 						num=1;
 					}else{
@@ -180,18 +215,18 @@ require(['config'],function(){
 				//加入购物车
 				this.btnAdd.click(function(e){
 					//console.log(this);
-					console.log($(document).scrollTop());
-					console.log(150-$(document).scrollTop());
+					//console.log($(document).scrollTop());
+					//console.log(150-$(document).scrollTop());
 					//console.log($(".carli")[0].offsetTop);
 					var top = e.pageY-50/2;
 					var left = e.pageX-50/2;
 					$("#goodsimg").clone(false,false).appendTo($('body')).addClass("mini").css({'top':top,'left':left}).animate({top:150+$(document).scrollTop(),left:$(document).width()},1000,function(){
 						$('.mini').remove();
 						addGoods();
-						carNum += thisCount;
+						carNum += Number($("#number").val());
 						$('.carli em').html(carNum);
 						//console.log($('.carli em'));
-
+						
 					});
 				}.bind(this));
 
@@ -203,6 +238,10 @@ require(['config'],function(){
 			},
 			shopping:function(){
 
+			},
+
+			getInfo:function(){
+
 			}
 
 		}
@@ -210,7 +249,7 @@ require(['config'],function(){
 		ginfo.init();
 
 		//商品对象
-		function Goods (top,left,id,num){
+		function Goods (id,num){
 			this.top=top;
 			this.left=left;
 			this.id=id;
@@ -224,8 +263,11 @@ require(['config'],function(){
 		function addGoods(){
 			console.log(0);
 			$ul = $("<ul/>");
-			$ul.append(`<li class="gli"><input type = "checkbox" class="goodscheck"/><img class="mini2" src="../img/1.png"/><i class="carnumber">1</i><i class="carprice">168.00</i></li>`)
+			console.log($("#number"));
+			$ul.append(`<li class="gli"><input type = "checkbox" class="goodscheck"/><img class="mini2" src="../img/${obj[0].bigImg}"/><i class="carnumber">${$("#number").val()}</i><i class="carprice">${obj[0].price}</i></li>`)
 			$ul.appendTo($(".car-list"));
 		}
+
+		
 	})
 })

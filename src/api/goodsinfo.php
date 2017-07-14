@@ -14,21 +14,20 @@
 	// 设置编码格式
 	$conn->set_charset('utf8');
 
-	// 获取资源
+	// 用户名
 	$goodsid = isset($_GET['goodsid']) ? $_GET['goodsid'] : '';
 
-	$password = md5($password);
+	//$password = md5($password);
 
-	$start = $goodsid;
-
-	// 查找所有商品信息
-	$sql = "select * from recommend order by goodsid limit ".$start.",10;";
-
+	// 查找所有用户信息
+	$sql = "select * from recommend where goodsid=".$goodsid;
+	//echo $sql;
 	$result = $conn->query($sql);
 
 	$row = $result->fetch_all(MYSQLI_ASSOC);
 
 	echo json_encode($row,JSON_UNESCAPED_UNICODE);
+	
 
 	//关闭连接
 	$conn->close();

@@ -141,25 +141,25 @@ require(['config'],function(){
 		$.ajax({
 			url:'../api/list.php',
 			data:{
-				goodsid:id,
+				goodsid:0,
 			},
 			dataType:"json",
 			success:function(res){
-				console.log(res);
+				//console.log(res);
 				var html = res.map(function(item){
 					id=item.goodsid;
 					return`
 						<li data-id="${item.goodsid}" class="showli"><img src="../img/${item.imgUrl}"/></li>
 					`
 				}).join("")
-				console.log(html);
+				//console.log(html);
 				$("<ul/>").html(html).appendTo($('.listcontent'));
 			}
 		})
 
 		// 滚动更多
 			$(window).on('scroll',function(){
-				console.log(111);
+				//console.log(111);
 				var scrollTop = $(window).scrollTop();
 				var winHeight = $(window).height();
 				var scrollHeight = $('html').outerHeight();
@@ -167,6 +167,7 @@ require(['config'],function(){
 				// 如何判断滚动到最底部
 				if(scrollTop >= scrollHeight - winHeight - 100){
 					if(id == 50) return;
+					//console.log(id);
 					$.ajax({
 						url:'../api/list.php',
 						data:{
@@ -176,6 +177,7 @@ require(['config'],function(){
 						// 设定返回数据类型
 						dataType:'json',
 						success:function(res){
+							console.log(res);
 							var $ul = $('<ul/>');
 							var html = res.map(function(item){
 								id=item.goodsid;
@@ -185,13 +187,8 @@ require(['config'],function(){
 							}).join("")
 
 							$("<ul/>").html(html).appendTo($('.listcontent'));
-
-							id+=10;
 						}
 					});
-
-					// 更新lastPage
-					id = id;
 				}
 
 			});
